@@ -1,0 +1,55 @@
+body {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+   margin: 0;
+   height: 100vh;
+   font-family: 'Roboto', sans-serif; /* Replace 'Roboto' with the desired Google Font */
+   perspective: 800px; /* Adding perspective to the body */
+}
+
+h1 {
+   color: white;
+   font-size: 4em;
+   margin-top: 80px;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 5px;
+   font-weight: 700;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+   transition: text-shadow 0.5s; /* Adding a transition effect */
+}
+
+h1:hover {
+   text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.5); /* Change text-shadow on hover */
+}
+
+.container {
+   width: 80%;
+   max-width: 1200px;
+   margin-top: 40px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+
+.card {
+   background: #2c3e50;
+   color: white;
+   padding: 20px;
+   margin: 20px;
+   border-radius: 10px;
+   width: 350px;
+   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3); /* Add a 3D-like shadow */
+}
+
+.card h2 {
+   font-size: 1.8em;
+   margin-bottom: 15px;
+}
+
+.card p {
+   font-size: 1.2em;
+   line-height: 1.6;
+}
