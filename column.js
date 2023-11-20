@@ -7,17 +7,37 @@ class Column {
         this.queue=[];
     }
 
-    moveTo(loc,frameCount=100){
-        for(let i=1; i<=frameCount;i++){
+    moveTo(loc, yOffset=1, frameCount=20){
+        for(let i=0; i<=frameCount;i++){
             const t= i/frameCount;
+            const u = Math.sin(t*Math.PI);
             this.queue.push({
                 x:lerp(this.x,loc.x,t),
-                y:lerp(this.y,loc.y,t)
+                y:lerp(this.y,loc.y,t)+u*this.width/2*yOffset
             });
         }
     }
 
+    jump(frameCount=20){
+        for(let i=0; i<=frameCount;i++){
+            const t= i/frameCount;
+            const u = Math.sin(t*Math.PI);
+            this.queue.push({
+                x:this.x,
+                y:this.y-u*this.width
+            });
+        }
+
+    }
+
     draw(ctx) {
+        let changed=false;
+        if(this.queue.length>0){
+            const {x,y}= this.queue.shift();
+            this.x=x;
+            this.y=y;
+            changed=true;
+        }
         const left = this.x - this.width / 2;
         const top = this.y - this.height;
         const right = this.x + this.width / 2;
@@ -38,18 +58,6 @@ class Column {
 
         ctx.strokeStyle = "black"; // Change the color as needed
         ctx.stroke();
+        return changed;
     }
-}
-
-// Your canvas creation and array generation code remains the same...
-
-// Drawing the columns with a blue gradient on a black background
-for (let i = 0; i < array.length; i++) {
-    const x = i * spacing + spacing / 2 + margin;
-    const y = myCanvas.height - margin;
-    const width = spacing - 4;
-    const height = maxColumnHeight * array[i];
-
-    const newColumn = new Column(x, y, width, height);
-    newColumn.draw(ctx);
 }

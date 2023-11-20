@@ -12,44 +12,37 @@ body {
 h1 {
    color: white;
    font-size: 4em;
-   margin-top: 80px;
    text-align: center;
-   text-transform: uppercase;
    letter-spacing: 5px;
    font-weight: 700;
    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-   transition: text-shadow 0.5s; /* Adding a transition effect */
+   transition: text-shadow 0.5s; 
 }
 
-h1:hover {
-   text-shadow: 4px 4px 8px rgba(255, 255, 255, 0.5); /* Change text-shadow on hover */
-}
 
 .container {
-   width: 80%;
-   max-width: 1200px;
+   width: 100%;
    margin-top: 40px;
    display: flex;
    flex-wrap: wrap;
    justify-content: center;
 }
 
-.card {
-   background: #2c3e50;
-   color: white;
-   padding: 20px;
-   margin: 20px;
-   border-radius: 10px;
-   width: 350px;
-   box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.3); /* Add a 3D-like shadow */
-}
 
-.card h2 {
-   font-size: 1.8em;
-   margin-bottom: 15px;
-}
-
-.card p {
-   font-size: 1.2em;
-   line-height: 1.6;
+.btn {
+  background-image: linear-gradient(109.6deg, rgb(60, 99, 151) 41.2%, rgb(24, 68, 116) 61.2%, rgb(38, 65, 139) );
+  border: 0;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: Montserrat,sans-serif;
+  font-size: .9em;
+  margin: 0px 10px;
+  padding: 10px 45px;
+  text-align: center;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
