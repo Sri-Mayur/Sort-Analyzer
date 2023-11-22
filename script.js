@@ -72,23 +72,36 @@ function playSelectionSort() {
     animate();
 }
 
+function playInsertionSort() {
+    moves = insertionSort(array);
+    animate();
+}
 
-function bubbleSort(array){
-    const moves= [];
-    do{
-        var swapped=false;
-        for(let i=1; i<array.length; i++){
-            if(array[i-1]>array[i]){
-                swapped=true;
-                [array[i-1],array[i]]=[array[i],array[i-1]];
-                moves.push({indices:[i-1,i], swap:true});
-            }else{
-                moves.push({indices:[i-1,i],swap:false});
+
+
+function bubbleSort(array) {
+    const moves = [];
+    let n = array.length;
+    let swapped;
+
+    do {
+        swapped = false;
+
+        for (let i = 0; i < n - 1; i++) {
+            if (array[i] > array[i + 1]) {
+                swapped = true;
+                [array[i], array[i + 1]] = [array[i + 1], array[i]];
+                moves.push({ indices: [i, i + 1], swap: true });
+            } else {
+                moves.push({ indices: [i, i + 1], swap: false });
             }
         }
-    }while(swapped);
+        n--;
+    } while (swapped);
+
     return moves;
 }
+
 
 function selectionSort(array) {
     const moves = [];
@@ -112,6 +125,28 @@ function selectionSort(array) {
 
     return moves;
 }
+
+
+function insertionSort(array) {
+    const moves = [];
+
+    for (let i = 1; i < array.length; i++) {
+        let key = array[i];
+        let j = i - 1;
+
+        while (j >= 0 && array[j] > key) {
+            array[j + 1] = array[j];
+            moves.push({ indices: [j, j + 1], swap: true });
+            j--;
+        }
+
+        array[j + 1] = key;
+        moves.push({ indices: [j + 1, j + 1], swap: false });
+    }
+
+    return moves;
+}
+
 
 
 function animate(){
