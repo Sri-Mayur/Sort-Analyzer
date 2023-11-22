@@ -7,7 +7,7 @@ class Column {
         this.queue=[];
     }
 
-    moveTo(loc, yOffset=1, frameCount=20){
+    moveTo(loc, yOffset=1, frameCount=15){
         for(let i=0; i<=frameCount;i++){
             const t= i/frameCount;
             const u = Math.sin(t*Math.PI);

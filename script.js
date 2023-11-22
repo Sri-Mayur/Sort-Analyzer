@@ -18,6 +18,31 @@ const maxColumnHeight=300;
 
 init();
 
+let audioCtx=null;
+
+function playNote(freq){
+    if(audioCtx==null){
+        audioCtx=new(
+            AudioContext ||
+            webkitAudioContext ||
+            window.webkitAudioContext
+        )();
+    }
+
+    const dur = 0.2;
+    const osc = audioCtx.createOscillator();
+    osc.frequency.value=freq;
+    osc.start();
+    osc.stop(audioCtx.currentTime+dur);
+
+    const node = audioCtx.createGain();
+    node.gain.value = 0.4;
+    node.gain.linearRampToValueAtTime(0, audioCtx.currentTime+dur);
+    osc.connect(node);
+    node.connect(audioCtx.destination);
+
+}
+
 
 
 function init(){
@@ -40,12 +65,6 @@ function init(){
 function play(){
     moves=bubbleSort(array);
 }
-
-
-
-
-
-
 animate();
 
 function bubbleSort(array){
@@ -78,6 +97,8 @@ function animate(){
     if(!changed && moves.length>0){
         const move=moves.shift();
         const[i,j]=move.indices;
+
+        playNote(200);
 
         if(move.swap){
             cols[i].moveTo(cols[j]);
