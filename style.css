@@ -5,8 +5,8 @@ body {
    background: linear-gradient(109.6deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
    margin: 0;
    height: 100vh;
-   font-family: 'Roboto', sans-serif; /* Replace 'Roboto' with the desired Google Font */
-   perspective: 800px; /* Adding perspective to the body */
+   font-family: 'Roboto', sans-serif; 
+   perspective: 800px; 
 }
 
 h1 {
@@ -28,21 +28,66 @@ h1 {
    justify-content: center;
 }
 
-
 .btn {
-  background-image: linear-gradient(109.6deg, rgb(60, 99, 151) 41.2%, rgb(24, 68, 116) 61.2%, rgb(38, 65, 139) );
-  border: 0;
-  border-radius: 50px;
-  box-shadow: rgba(0, 0, 0, 0.3) 0 5px 15px;
-  box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
-  font-family: Montserrat,sans-serif;
-  font-size: .9em;
-  margin: 0px 10px;
-  padding: 10px 45px;
-  text-align: center;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
+   --blue: #7ec8f5; 
+   font-size: 15px;
+   padding: 15px 35px;
+   margin: 2px 10px;
+   border-radius: 10%;
+   letter-spacing: 0.06em;
+   position: relative;
+   cursor: pointer;
+   border: white;
+   overflow: hidden;
+   transition: all 0.7s;
+   background: linear-gradient(to right, rgba(27, 144, 253, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 181, 253, 0.1) 100%);
+   color: white;
+   box-shadow: inset 0 0 10px rgba(27, 42, 253, 0.4), 0 0 9px 3px rgba(27, 50, 253, 0.1);
 }
+
+.btn:hover {
+   color: #4f5ee5; 
+   box-shadow:  0 0 10px rgba(27, 87, 253, 0.6), 0 0 9px 3px rgba(27, 87, 253, 0.2)
+}
+
+.btn:before {
+   content: "";
+   position: absolute;
+   left: -4em;
+   width: 4em;
+   height: 100%;
+   top: 0;
+   transition: transform .7s ease-in-out;
+   background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+ }
+ 
+ .btn:hover:before {
+   transform: translateX(15em);
+ 
+   overflow: hidden;
+   transition: all 0.3s;
+   border: 2px  white;
+   background: linear-gradient(to right, rgba(27, 144, 253, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 181, 253, 0.1) 100%);
+   color: white;
+   box-shadow: inset 0 0 10px rgba(27, 42, 253, 0.4), 0 0 9px 3px rgba(27, 50, 253, 0.1);
+};
+
+.btn:hover {
+   color: #4fa9e5; 
+   box-shadow: inset 0 0 10px rgba(27, 87, 253, 0.6), 0 0 9px 3px rgba(27, 87, 253, 0.2);
+}
+
+.btn:before {
+   content: "";
+   position: absolute;
+   left: -4em;
+   width: 4em;
+   height: 100%;
+   top: 0;
+   transition: transform .4s ease-in-out;
+   background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+ }
+ 
+ .btn:hover:before {
+   transform: translateX(15em);
+ }
