@@ -1,10 +1,10 @@
 //https://sri-mayur.github.io/Sort-Analyzer/
 
 myCanvas.width= 600;
-myCanvas.height=500;
+myCanvas.height=550;
 const margin=30;
 
-const n=20;
+let n=20;
 const array=[];
 
 let moves=[];
@@ -77,6 +77,46 @@ function playInsertionSort() {
     animate();
 }
 
+
+function playQuickSort() {
+    moves = quickSort(array, 0, array.length - 1);
+    animate();
+}
+
+function quickSort(array, low, high) {
+    if (low < high) {
+        const pi = partition(array, low, high);
+
+        quickSort(array, low, pi);
+        quickSort(array, pi + 1, high);
+    }
+
+    return moves;
+}
+
+function partition(array, low, high) {
+    const pivot = array[Math.floor((low + high) / 2)];
+    let i = low - 1;
+    let j = high + 1;
+
+
+    while (true) {
+        do {
+            i++;
+        } while (array[i] < pivot);
+
+        do {
+            j--;
+        } while (array[j] > pivot);
+
+        if (i >= j) {
+            return j;
+        }
+
+        [array[i], array[j]] = [array[j], array[i]];
+        moves.push({ indices: [i, j], swap: true });
+    }
+}
 
 
 function bubbleSort(array) {
