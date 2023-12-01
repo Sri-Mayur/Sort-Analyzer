@@ -1,4 +1,4 @@
-//https://sri-mayur.github.io/Sort-Analyzer/
+https://sri-mayur.github.io/Sort-Analyzer/
 
 myCanvas.width= 600;
 myCanvas.height=550;
@@ -202,7 +202,7 @@ function animate(){
         const move=moves.shift();
         const[i,j]=move.indices;
 
-        playNote(200);
+        playNote(250);
 
         if(move.swap){
             cols[i].moveTo(cols[j]);
