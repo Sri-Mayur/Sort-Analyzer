@@ -4,7 +4,7 @@ myCanvas.width= 600;
 myCanvas.height=550;
 const margin=30;
 
-let n=20;
+let n=10;
 const array=[];
 
 let moves=[];
@@ -52,7 +52,7 @@ function init(){
     moves=[];
     for(let i=0; i<array.length;i++){
         const x = i*spacing+spacing/2+margin;
-        const y = myCanvas.height-margin-i*8;
+        const y = myCanvas.height-margin-i*20;
         const width = spacing-4;
         const height = maxColumnHeight*array[i];
     
