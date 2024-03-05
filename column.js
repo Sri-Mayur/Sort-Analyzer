@@ -13,7 +13,7 @@ class Column {
         }; // Initial color
     }
 
-    moveTo(loc, yOffset = 1, frameCount = 70) {
+    moveTo(loc, yOffset = 1, frameCount = 30) {
         for (let i = 0; i <= frameCount; i++) {
             const t = i / frameCount;
             const u = Math.sin(t * Math.PI);
@@ -31,7 +31,7 @@ class Column {
         };
     }
 
-    jump(frameCount = 70) {
+    jump(frameCount = 30) {
         for (let i = 0; i <= frameCount; i++) {
             const t = i / frameCount;
             const u = Math.sin(t * Math.PI);
